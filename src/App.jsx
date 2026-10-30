@@ -14,6 +14,8 @@ import LegalLayout from "./components/LegalLayout.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import TermsOfService from "./pages/TermsOfService.jsx";
 import GetStartedPage from "./pages/GetStartedPage.jsx";
+import HelpCenterPage from "./pages/HelpCenterPage.jsx";
+import DocumentationPage from "./pages/DocumentationPage.jsx";
 
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -26,7 +28,11 @@ export default function App() {
           ? "Terms of Service"
           : path === "/get-started"
             ? "Get Started"
-          : "Make Every Day Count";
+            : path === "/help-center"
+              ? "Help Center"
+              : path === "/documentation"
+                ? "Documentation"
+                : "Make Every Day Count";
 
     document.title = `${pageTitle} | TaskFlow`;
   }, [path]);
@@ -49,6 +55,14 @@ export default function App() {
 
   if (path === "/get-started") {
     return <GetStartedPage />;
+  }
+
+  if (path === "/help-center") {
+    return <HelpCenterPage />;
+  }
+
+  if (path === "/documentation") {
+    return <DocumentationPage />;
   }
 
   return (

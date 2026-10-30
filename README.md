@@ -13,8 +13,9 @@ The page is a frontend concept with a visual task dashboard. It does not provide
 - `index.html` - Vite entry page and document metadata
 - `src/App.jsx` - assembles the page from its components
 - `src/components/` - reusable page sections, including the header, hero, feature sections, FAQ, and footer
-- `src/pages/` - the privacy policy and terms of service pages
+- `src/pages/` - the privacy policy, terms, help center, documentation, and getting started pages
 - `/privacy-policy` and `/terms-of-service` - routes for the legal information pages
+- `/help-center` and `/documentation` - product help and demo documentation pages
 - `/get-started` - introduction page linked from the Get started buttons
 - `src/main.jsx` - React application entry point
 - `src/styles.css` - responsive styling and animations
