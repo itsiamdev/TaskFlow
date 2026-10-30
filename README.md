@@ -33,6 +33,7 @@ npm run dev
 Create a production build with `npm run build`, or preview it locally with `npm run preview`.
 
 The page loads its fonts from Google Fonts when an internet connection is available and uses system font fallbacks otherwise.
+Vercel uses `vercel.json` to serve the React entry page for direct visits to client-side routes such as `/get-started`.
 
 ## License
 
