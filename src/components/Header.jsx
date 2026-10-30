@@ -13,7 +13,7 @@ export default function Header() {
               <a href="/#faq">FAQ</a>
             </div>
             <div className="nav-actions">
-              <a className="sign-in" href="/#get-started">Sign in</a>
+              <a className="blog-link" href="/blog">Blog</a>
               <a className="button button-small button-dark" href="/get-started">Get started <span aria-hidden="true">↗</span></a>
             </div>
           </nav>

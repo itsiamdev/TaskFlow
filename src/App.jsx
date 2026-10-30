@@ -16,6 +16,7 @@ import TermsOfService from "./pages/TermsOfService.jsx";
 import GetStartedPage from "./pages/GetStartedPage.jsx";
 import HelpCenterPage from "./pages/HelpCenterPage.jsx";
 import DocumentationPage from "./pages/DocumentationPage.jsx";
+import BlogPage from "./pages/BlogPage.jsx";
 
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -32,6 +33,8 @@ export default function App() {
               ? "Help Center"
               : path === "/documentation"
                 ? "Documentation"
+                : path === "/blog"
+                  ? "Blog"
                 : "Make Every Day Count";
 
     document.title = `${pageTitle} | TaskFlow`;
@@ -63,6 +66,10 @@ export default function App() {
 
   if (path === "/documentation") {
     return <DocumentationPage />;
+  }
+
+  if (path === "/blog") {
+    return <BlogPage />;
   }
 
   return (
