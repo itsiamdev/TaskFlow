@@ -1,23 +1,19 @@
-# Todo Privacy Policy
+# TaskFlow
 
-This repository contains the static privacy policy website for the Todo application.
+This repository contains a responsive TaskFlow productivity landing page built with HTML and CSS.
 
 ## Description
 
-Todo is a simple productivity app designed to help users organize tasks while keeping their information private. The application does not collect, transmit, store, sell, or share personal information or device data. Any task content is stored locally on the user's device, when applicable.
-
-The website presents the privacy policy and contact information in a responsive, accessible layout.
+TaskFlow is presented as a polished productivity concept with a visual task dashboard, feature highlights, testimonials, and an FAQ. The dashboard is a static mockup: it does not provide authentication, persistent task management, or other application logic.
 
 ## Project structure
 
-- `index.html` - privacy policy page
-- `style.css` - page styling and responsive layout
-- `mobile.png` - favicon image
-- `mobile-icon.svg` - Todo brand icon
+- `index.html` - landing page and dashboard mockups
+- `styles.css` - responsive styling, components, and animations
 
 ## Usage
 
-Open `index.html` in a web browser. No build process or dependencies are required.
+Open `index.html` in a web browser. No build process or dependencies are required. The page loads its fonts from Google Fonts when an internet connection is available and uses system font fallbacks otherwise.
 
 ## License
 
