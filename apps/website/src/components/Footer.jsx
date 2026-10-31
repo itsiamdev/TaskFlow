@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="footer-column"><strong>Resources</strong><a href="/help-center">Help center</a><a href="/documentation">Documentation</a></div>
             <div className="footer-column"><strong>Legal</strong><a href="/privacy-policy">Privacy policy</a><a href="/terms-of-service">Terms of service</a></div>
           </div>
-          <div className="container footer-bottom"><span>© 2026 TaskFlow. A concept demo.</span><span>Designed for a clearer day <b>✳</b></span></div>
+          <div className="container footer-bottom"><span>© 2026 TaskFlow. Make room for what matters.</span><span>Designed for a clearer day <b>✳</b></span></div>
         </footer>
   );
 }
