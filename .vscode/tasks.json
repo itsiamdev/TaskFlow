@@ -1,0 +1,105 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Inspect migration environment",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"git --no-pager status --short; node --version; npm --version"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Scaffold bare React Native",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"--yes",
+				"@react-native-community/cli@latest",
+				"init",
+				"TaskflowMobile",
+				"--directory",
+				"apps/mobile-react-native",
+				"--package-name",
+				"com.taskflow.mobile",
+				"--pm",
+				"npm",
+				"--skip-install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Scaffold React Native with npm approval",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"--yes",
+				"@react-native-community/cli@latest",
+				"init",
+				"TaskflowMobile",
+				"--directory",
+				"apps/mobile-react-native",
+				"--package-name",
+				"com.taskflow.mobile",
+				"--pm",
+				"npm",
+				"--skip-install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install TaskFlow React Native dependencies",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"apps/mobile-react-native",
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate React Native app",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"npm.cmd --prefix apps/mobile-react-native run typecheck; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm.cmd --prefix apps/mobile-react-native test -- --runInBand; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm.cmd --prefix apps/mobile-react-native run lint"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Activate React Native app at apps mobile",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$ErrorActionPreference = 'Stop'; if (Test-Path 'apps\\mobile-flutter') { throw 'apps/mobile-flutter already exists; refusing to overwrite it.' }; if (Test-Path 'apps\\mobile-react-native\\.git') { Remove-Item -LiteralPath 'apps\\mobile-react-native\\.git' -Recurse -Force }; Move-Item -LiteralPath 'apps\\mobile' -Destination 'apps\\mobile-flutter'; Move-Item -LiteralPath 'apps\\mobile-react-native' -Destination 'apps\\mobile'"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Move RN app into mobile folder",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$ErrorActionPreference = \"Stop\"; if (Test-Path \"apps\\mobile-flutter\") { throw \"apps/mobile-flutter exists\" }; if (Test-Path \"apps\\mobile-react-native\\.git\") { Remove-Item -LiteralPath \"apps\\mobile-react-native\\.git\" -Recurse -Force }; Move-Item -LiteralPath \"apps\\mobile\" -Destination \"apps\\mobile-flutter\"; Move-Item -LiteralPath \"apps\\mobile-react-native\" -Destination \"apps\\mobile\""
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
