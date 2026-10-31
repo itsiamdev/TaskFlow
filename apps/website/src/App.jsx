@@ -16,6 +16,7 @@ import TermsOfService from "./pages/TermsOfService.jsx";
 import GetStartedPage from "./pages/GetStartedPage.jsx";
 import HelpCenterPage from "./pages/HelpCenterPage.jsx";
 import DocumentationPage from "./pages/DocumentationPage.jsx";
+import DeveloperPage from "./pages/DeveloperPage.jsx";
 import BlogPage, { getBlogArticleBySlug } from "./pages/BlogPage.jsx";
 
 export default function App() {
@@ -35,6 +36,8 @@ export default function App() {
               ? "Help Center"
               : path === "/documentation"
                 ? "Documentation"
+                : path === "/developer"
+                  ? "Developer"
                 : path === "/blog"
                   ? "Blog"
                   : blogArticle
@@ -70,6 +73,10 @@ export default function App() {
 
   if (path === "/documentation") {
     return <DocumentationPage />;
+  }
+
+  if (path === "/developer") {
+    return <DeveloperPage />;
   }
 
   if (path === "/blog" || path.startsWith("/blog/")) {

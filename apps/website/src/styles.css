@@ -247,6 +247,20 @@ p { color: var(--muted); }
 .documentation-section p { margin-bottom: 10px; font-size: 13px; line-height: 1.85; }
 .documentation-section p:last-child { margin-bottom: 0; }
 .resource-demo-note { max-width: 800px; margin-top: 38px; padding: 17px 20px; border: 1px solid #e8e4fc; border-radius: 14px; color: #6254ba; background: #f8f6ff; font-size: 12px; line-height: 1.8; }
+.developer-page { padding-bottom: 110px; }
+.developer-profile { display: grid; grid-template-columns: 90px minmax(0, 1fr); align-items: start; gap: 25px; max-width: 800px; padding: 30px; border: 1px solid #eeedf3; border-radius: 20px; background: #fff; box-shadow: 0 14px 38px rgba(39, 31, 83, .04); }
+.developer-avatar { display: block; width: 90px; height: 90px; border: 1px solid #e8e4fc; border-radius: 24px; object-fit: cover; }
+.developer-eyebrow { color: #9997a5; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.developer-profile-copy h2 { margin: 7px 0 10px; font-size: 26px; letter-spacing: -.05em; }
+.developer-profile-copy p, .developer-project p { max-width: 600px; margin-bottom: 16px; font-size: 13px; line-height: 1.85; }
+.developer-inline-link, .developer-contribute-link { color: var(--accent-dark); font-size: 12px; font-weight: 700; }
+.developer-inline-link span, .developer-contribute-link span { margin-left: 4px; }
+.developer-project { display: flex; align-items: center; justify-content: space-between; gap: 28px; max-width: 800px; margin-top: 24px; padding: 28px 30px; border: 1px solid #e8e4fc; border-radius: 20px; background: #f8f6ff; }
+.developer-project h2 { margin: 8px 0 9px; font-size: 23px; letter-spacing: -.045em; }
+.developer-project p { margin-bottom: 0; }
+.developer-actions { display: flex; flex: 0 0 auto; align-items: center; }
+.developer-action-button { min-height: 48px; padding-inline: 18px; border-radius: 13px; white-space: nowrap; }
+.developer-action-button:focus-visible { outline: 3px solid #a79bf5; outline-offset: 3px; }
 .blog-page { min-height: 65vh; padding-block: 36px 100px; background: linear-gradient(180deg, #fdfcff 0%, #fff 420px); }
 .blog-container { max-width: 1100px; }
 .blog-back-link { display: inline-flex; gap: 8px; margin-bottom: 32px; }
@@ -411,6 +425,7 @@ button.download-option { font: inherit; cursor: not-allowed; }
   .documentation-nav { position: static; flex-direction: row; flex-wrap: wrap; gap: 10px 18px; }
   .documentation-nav strong { flex-basis: 100%; }
   .resource-contact { align-items: flex-start; flex-direction: column; }
+  .developer-project { align-items: flex-start; flex-direction: column; }
   .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav { gap: 15px; }.nav-links { gap: 16px; }.nav-links a { font-size: 12px; }.nav-actions { gap: 13px; }.sign-in { display: none; }
   .hero { padding-top: 54px; }.hero-grid { grid-template-columns: 1fr; gap: 20px; }.hero-copy { max-width: 650px; padding-bottom: 8px; }.hero h1 { font-size: clamp(3.7rem,10vw,5.3rem); }.hero-description { max-width: 560px; }.hero-visual { width: min(100%,650px); margin: 0 auto; }.ambient-ring { width: 420px; height: 420px; }.hero-bottom { padding-top: 12px; }
@@ -425,6 +440,11 @@ button.download-option { font: inherit; cursor: not-allowed; }
 @media (max-width: 560px) {
   .container { width: calc(100% - 36px); }
   .section-pad { padding-block: 68px; }
+  .developer-profile { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
+  .developer-avatar { width: 68px; height: 68px; border-radius: 19px; font-size: 32px; }
+  .developer-project { padding: 23px; }
+  .developer-actions { width: 100%; flex-direction: column; align-items: stretch; }
+  .developer-action-button { justify-content: center; width: 100%; }
   .blog-grid { grid-template-columns: 1fr; }
   .blog-card-content h2, .blog-card-content > p { min-height: 0; }
   .site-header { height: auto; min-height: 72px; }.nav { min-height: 72px; flex-wrap: wrap; padding-block: 12px; }.brand { font-size: 19px; }.brand-mark { width: 26px; height: 26px; }.nav-links { order: 3; width: 100%; justify-content: space-between; gap: 10px; padding: 7px 0 2px; }.nav-links a { font-size: 11px; }.nav-actions { margin-left: auto; }.button-small { min-height: 37px; padding-inline: 12px; font-size: 11px; }
