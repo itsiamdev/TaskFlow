@@ -1,5 +1,6 @@
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
+import BetaCountdownSection from "../components/BetaCountdownSection.jsx";
 
 const steps = [
   {
@@ -86,6 +87,8 @@ export default function GetStartedPage() {
               Explore the features <span aria-hidden="true">↗</span>
             </a>
           </section>
+
+          <BetaCountdownSection />
 
           <section className="download-section" aria-labelledby="download-title">
             <PhonePreviews />

@@ -14,7 +14,7 @@ export default function Header() {
             </div>
             <div className="nav-actions">
               <a className="blog-link" href="/blog">Blog</a>
-              <a className="button button-small button-dark" href="/get-started">Get started <span aria-hidden="true">↗</span></a>
+              <a className="button button-small button-primary" href="/get-started">Get started <span aria-hidden="true">↗</span></a>
             </div>
           </nav>
         </header>
