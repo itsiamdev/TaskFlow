@@ -16,10 +16,12 @@ import TermsOfService from "./pages/TermsOfService.jsx";
 import GetStartedPage from "./pages/GetStartedPage.jsx";
 import HelpCenterPage from "./pages/HelpCenterPage.jsx";
 import DocumentationPage from "./pages/DocumentationPage.jsx";
-import BlogPage from "./pages/BlogPage.jsx";
+import BlogPage, { getBlogArticleBySlug } from "./pages/BlogPage.jsx";
 
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  const blogSlug = path.startsWith("/blog/") ? path.slice("/blog/".length) : "";
+  const blogArticle = getBlogArticleBySlug(blogSlug);
 
   useEffect(() => {
     const pageTitle =
@@ -35,6 +37,8 @@ export default function App() {
                 ? "Documentation"
                 : path === "/blog"
                   ? "Blog"
+                  : blogArticle
+                    ? blogArticle.title
                 : "Make Every Day Count";
 
     document.title = `${pageTitle} | TaskFlow`;
@@ -68,7 +72,7 @@ export default function App() {
     return <DocumentationPage />;
   }
 
-  if (path === "/blog") {
+  if (path === "/blog" || path.startsWith("/blog/")) {
     return <BlogPage />;
   }
 
